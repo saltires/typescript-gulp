@@ -1,0 +1,34 @@
+{
+  "name": "typescript-gulp",
+  "version": "1.0.0",
+  "description": "use gulp to build typescript project",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test index.js",
+    "build": "rimraf dist types && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltires/typescript-gulp.git"
+  },
+  "keywords": [
+    "typescript",
+    "gulp"
+  ],
+  "author": "saltires (ye998102@163.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saltires/typescript-gulp/issues"
+  },
+  "homepage": "https://github.com/saltires/typescript-gulp#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "merge2": "^1.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.2"
+  },
+  "files": [
+    "lib"
+  ]
+}
