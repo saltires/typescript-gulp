@@ -1,46 +1,18 @@
-function hello(compiler: string) {
-    console.log(`Hello from ${compiler}`);
-}
-hello("TypeScript");
+import { common, commonInterface } from './common'
+import { cookie, cookieInterface } from './cookie'
+import { date, dateInterface } from './date'
+import { device, deviceInterface } from './device'
+import { dom, domInterface } from './dom'
+import { check, checkInterface } from './regexp'
+import { str, stringInterface } from './string'
+import { url, urlInterface } from './url'
+import { name, version } from '../package.json'
 
-const name:Options = {
-    force: true,
-    offline: false
+interface saltireUtilInterface extends commonInterface, cookieInterface, dateInterface, deviceInterface, domInterface, checkInterface, stringInterface, urlInterface {
+    version: string,
+    name: string
 }
 
-export type Config = {
-    // user
-    optionMergeStrategies: { [key: string]: Function };
-    silent: boolean;
-    productionTip: boolean;
-    performance: boolean;
-    devtools: boolean;
-    ignoredElements: Array<string | RegExp>;
-    keyCodes: { [key: string]: number | Array<number> };
-  
-    // platform
-    isReservedTag: (x?: string) => boolean;
-    isReservedAttr: (x?: string) => boolean;
-    parsePlatformTagName: (x: string) => string;
-    isUnknownElement: (x?: string) => boolean;
-    getTagNamespace: (x?: string) => string | void;
-  
-    // private
-    async: boolean;
-  
-    // legacy
-    _lifecycleHooks: Array<string>;
-  };
+const saltireUtil: saltireUtilInterface = Object.assign({ name, version }, cookie, common, date, device, dom, check, str, url)
 
-export interface Options {
-    /**
-     * Force mode, overwrite if the target exists.
-     * @default false
-     */
-    force?: boolean
-    /**
-     * Offline mode, try to use an offline template.
-     * @default false
-     */
-    offline?: boolean
-}
+export default saltireUtil

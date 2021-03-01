@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "test index.js",
-    "build": "rimraf dist types && gulp"
+    "build": "gulp",
+    "dev": "gulp --dev"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,21 @@
   },
   "homepage": "https://github.com/saltires/typescript-gulp#readme",
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
     "merge2": "^1.4.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.2.2"
+    "tsify": "^5.0.2",
+    "typescript": "^4.2.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "files": [
     "lib"
